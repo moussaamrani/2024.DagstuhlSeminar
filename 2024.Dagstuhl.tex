@@ -1,0 +1,136 @@
+\documentclass[conference,compsoc]{IEEEtran}
+\IEEEoverridecommandlockouts
+\pdfsuppresswarningpagegroup=1
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{xspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    citecolor = {blue}
+}
+\usepackage{orcidlink}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\graphicspath{ {images/} }
+
+\usepackage[capitalise]{cleveref}
+\usepackage{soul}
+\usepackage[
+	hyperref=true,
+	%backref=true,
+	bibencoding=utf8,
+	backend=biber,
+	style=numeric,
+	%bibstyle=authoryear,
+	%citestyle=authoryear-comp,
+	useprefix=true,
+	uniquename=init,
+	maxnames=100,
+	minnames=3,
+	maxcitenames=1,
+	mincitenames=1
+]{biblatex}
+\bibliography{./2024.Dasgstuhl}
+
+
+
+%%%%% COMMENT SYSTEM %%%%%%%%%%%%%%%%%%%%%%%%
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}{%
+   \newcommand{\nb}[2]{\fcolorbox{gray}{yellow}{\bfseries\sffamily #1}{$\blacktriangleright$#2$\blacktriangleleft$}}
+   \newcommand{\nbb}[1]{\fcolorbox{gray}{red}{\bfseries\sffamily {#1}}}
+}{
+   \newcommand{\nb}[2]{} 
+   \newcommand{\nbb}[1]{} 
+}
+\newcommand\MA[1]{\nb{Moussa}{\textcolor{blue}{#1}}} 
+\newcommand\RH[1]{\nb{Robert}{\textcolor{green}{#1}}}
+\newcommand\ID[1]{\nb{Istvan}{\textcolor{red}{#1}}}
+\newcommand\HV[1]{\nb{Hans}{\textcolor{purple}{#1}}}
+\newcommand\TD[1]{\nbb{/!\textbackslash}{{\textcolor{purple}{#1}}\xspace\fcolorbox{gray}{red}{/!\textbackslash}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% COMMON ABBREVIATIONS %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xspace}
+\newcommand{\DSL}{\textsc{Dsl}\xspace}
+\newcommand{\DSLs}{\textsc{Dsl}s\xspace}
+\newcommand{\MDE}{\textsc{Mde}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\renewcommand*{\thesection}{\Roman{subsection}.}
+
+\begin{document}
+
+\title{At the crossroad of Multi-Paradigm Modelling and Machine Learning}
+
+
+\author{
+	\IEEEauthorblockN{Moussa Amrani\IEEEauthorrefmark{1}\orcidlink{0000-0002-6987-1037}, 
+	Istvan David\IEEEauthorrefmark{2}\orcidlink{0000-0002-4870-8433}, 
+	Robert Heinrich\IEEEauthorrefmark{3}, 
+	Hans Vangheluwe\IEEEauthorrefmark{4}\orcidlink{0000-0003-2079-6643}}
+
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{1}\textit{Faculty of Computer Science},
+		\textit{Namur Digital Institute (NaDI)},
+		\textit{University of Namur}, 
+		Namur, Belgium \\
+		\texttt{Moussa.Amrani@unamur.be}
+	}
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{2}\textit{Department of Computing and Software, Faculty of Engineering}, 
+		\textit{McMaster University},
+		Hamilton, ON, Canada\\
+		\texttt{Istvan.David@mcmaster.ca}
+	}
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{3}\textit{KASTEL -- Institute of Information Security and Dependability}, 
+		\textit{Karlsruhe Institute of Technology (KIT)},
+		Karlsruhe, Germany\\
+		\texttt{Robert.Heinrich@kit.edu}
+	}
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{4}\textit{Flanders Make / Antwerp Systems \& Software Modelling}, 
+		\textit{University of Antwerp},
+		Antwerp, Belgium\\
+		\texttt{Hans.Vangheluwe@uantwerpen.be}
+	}
+}
+
+
+
+\maketitle
+%\input{Abstract}
+\input{Metadata}
+\newpage
+\section{Proposal}
+\label{sec:Proposal}
+\input{ResearchArea}
+\input{Topics}
+\input{Composition}
+\input{Outcomes}
+\input{Structure}
+\input{Relations}
+\input{Related}
+
+
+\printbibliography
+\end{document}
+

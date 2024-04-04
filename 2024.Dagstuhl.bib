@@ -1,0 +1,91 @@
+\documentclass[acmsmall]{acmart}
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\usepackage{rotating,tabularx,booktabs,siunitx,caption}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcommand\mc[1]{\multicolumn{1}{C}{#1}} % handy shortcut macro
+
+\usepackage{listings}
+\lstset{
+basicstyle=\ttfamily,
+frame=single
+}
+\graphicspath{{img/}{pdf/}}
+\usepackage[caption=false]{subfig}
+\usepackage{enumitem}
+\newcommand{\RQlabel}[2]{$#1.#2$}
+
+\usepackage{multirow,booktabs,tabularx}
+\usepackage{boxedminipage}
+\usepackage{rotating}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+
+%%%%% COMMENT SYSTEM %%%%%%%%%%%%%%%%%%%%%%%%
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}{%
+   \newcommand{\nb}[2]{\fcolorbox{gray}{yellow}{\bfseries\sffamily #1}{$\blacktriangleright$#2$\blacktriangleleft$}}
+   \newcommand{\nbb}[1]{\fcolorbox{gray}{red}{\bfseries\sffamily #1}}
+}{
+   \newcommand{\nb}[2]{} 
+   \newcommand{\nbb}[1]{} 
+}
+\newcommand\MA[1]{\nb{Moussa}{\textcolor{blue}{#1}}} 
+\newcommand\AO[1]{\nb{Abdel}{\textcolor{green}{#1}}}
+\newcommand\TD{\nbb{/!\textbackslash}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% COMMON ABBREVIATIONS %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xspace}
+\newcommand{\DSL}{\textsc{Dsl}\xspace}
+\newcommand{\DSLs}{\textsc{Dsl}s\xspace}
+\newcommand{\MDE}{\textsc{Mde}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\title{Animation of Model Transformations in Model-Driven Engineering: A Mapping Study}
+
+\author{Moussa Amrani}
+\email{Moussa.Amrani@unamur.be}
+\orcid{1234-5678-9012}
+\author{Abdelkader Ouared}
+\email{Abdelkader.Ouared@unamur.be}
+\author{Pierre-Yves Schobbens}
+\email{Pierre-Yves.Schobbens@unamur.be}
+\affiliation{%
+  \institution{Faculty of Computer Science / NaDI, University of Namur}
+  \streetaddress{Rue Grandgagnage, 21}
+  \city{Namur}
+  \country{Belgium}
+  \postcode{5000}
+}
+
+\renewcommand{\shortauthors}{Amrani, Ouared and Schobbens}
+
+\input{Abstract}
+\maketitle
+\input{Introduction}
+\input{Background}
+\input{RM}
+\input{Results}
+\input{TV}
+\input{Classification}
+\input{RW}
+%\input{Discussion}
+\input{Conclusion}
+\appendix
+\input{Tools}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{./2024.Dasgstuhl}
+\end{document}
+
