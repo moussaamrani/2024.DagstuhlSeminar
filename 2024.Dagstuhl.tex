@@ -52,7 +52,7 @@
 \setboolean{showcomments}{true} % toggle to show or hide comments
 \ifthenelse{\boolean{showcomments}}{%
    \newcommand{\nb}[2]{\fcolorbox{gray}{yellow}{\bfseries\sffamily #1}{$\blacktriangleright$#2$\blacktriangleleft$}}
-   \newcommand{\nbb}[1]{\fcolorbox{gray}{red}{\bfseries\sffamily {#1}}}
+   \newcommand{\nbb}[1]{{\sffamily {#1}}}
 }{
    \newcommand{\nb}[2]{} 
    \newcommand{\nbb}[1]{} 
@@ -61,7 +61,7 @@
 \newcommand\RH[1]{\nb{Robert}{\textcolor{green}{#1}}}
 \newcommand\ID[1]{\nb{Istvan}{\textcolor{red}{#1}}}
 \newcommand\HV[1]{\nb{Hans}{\textcolor{purple}{#1}}}
-\newcommand\TD[1]{\nbb{/!\textbackslash}{{\textcolor{purple}{#1}}\xspace\fcolorbox{gray}{red}{/!\textbackslash}}}
+\newcommand\TD[1]{\nbb{\fcolorbox{gray}{red}{/!\textbackslash} \textcolor{purple}{#1}\xspace\fcolorbox{gray}{red}{/!\textbackslash}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -129,7 +129,7 @@
 \input{Structure}
 \input{Relations}
 \input{Related}
-
+\input{MM}
 
 \printbibliography
 \end{document}
